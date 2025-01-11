@@ -1,0 +1,65 @@
+// Brand Colors
+$primary-blue: #092c4c;
+$secondary-orange: #f2994a;
+
+// State Colors
+$info: #7B57E0;
+$success: #47A785;
+$warning: #5395CF;
+$error: #EFB047;
+
+// Monochrome Colors
+$black-primary: #000000;
+$black-secondary: #1D1D1D;
+$black-tertiary: #282828;
+$white: #FFFFFF;
+
+// Gray Scale
+$gray-900: #333333;  // Gray 1
+$gray-700: #4F4F4F;  // Gray 2
+$gray-500: #828282;  // Gray 3
+$gray-300: #BDBDBD;  // Gray 4
+$gray-100: #E0E0E0;  // Gray 5
+
+// Semantic Colors (for common use cases)
+$text-primary: $black-primary;
+$text-secondary: $gray-700;
+$text-disabled: $gray-300;
+
+$background-primary: $white;
+$background-secondary: $gray-100;
+
+$border-color: $gray-300;
+
+// Component-specific colors (examples)
+$button-primary-bg: $primary-blue;
+$button-secondary-bg: $secondary-orange;
+$button-disabled-bg: $gray-300;
+
+$link-color: $primary-blue;
+$link-hover: $secondary-orange;
+
+// Alert/Notification colors
+$alert-info-bg: rgba($info, 0.1);
+$alert-success-bg: rgba($success, 0.1);
+$alert-warning-bg: rgba($warning, 0.1);
+$alert-error-bg: rgba($error, 0.1);
+
+// Add these custom button variants
+.btn-login {
+    background-color: #f2994a !important;
+    border-color: #f2994a !important;
+    &:hover {
+        background-color: darken(#f2994a, 10%) !important;
+        border-color: darken(#f2994a, 10%) !important;
+    }
+}
+
+.btn-signup {
+    background-color: #092c4c !important;
+    border-color: #092c4c !important;
+    &:hover {
+        background-color: darken(#092c4c, 10%) !important;
+        border-color: darken(#092c4c, 10%) !important;
+    }
+}

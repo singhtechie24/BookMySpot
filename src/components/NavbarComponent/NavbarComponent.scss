@@ -1,0 +1,71 @@
+@import '../../../index.scss';
+
+.custom-navbar {
+    background-color: #000000;
+    padding: 1rem 2rem;
+    font-family: 'Open Sans', sans-serif;
+
+    .navbar-logo {
+        .logo-img {
+            height: 40px;
+            width: auto;
+        }
+    }
+
+    .nav-link {
+        color: #FFFFFF !important;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        transition: color 0.3s ease;
+        
+        &:hover {
+            color: #E47E43 !important;
+        }
+    }
+
+    .auth-buttons {
+        .btn {
+            padding: 0.5rem 1.5rem;
+            font-weight: 500;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-login {
+            background-color: #E47E43;
+            border: none;
+            color: #FFFFFF;
+            margin-right: 1rem;
+            
+            &:hover {
+                background-color: darken(#E47E43, 10%);
+            }
+        }
+
+        .btn-signup {
+            background-color: #1274B1;
+            border: none;
+            color: #FFFFFF;
+            
+            &:hover {
+                background-color: darken(#1274B1, 10%);
+            }
+        }
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 991px) {
+    .custom-navbar {
+        .auth-buttons {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+            
+            .btn {
+                flex: 1;
+                margin-right: 0;
+            }
+        }
+    }
+}
