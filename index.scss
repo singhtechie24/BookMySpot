@@ -44,22 +44,3 @@ $alert-info-bg: rgba($info, 0.1);
 $alert-success-bg: rgba($success, 0.1);
 $alert-warning-bg: rgba($warning, 0.1);
 $alert-error-bg: rgba($error, 0.1);
-
-// Add these custom button variants
-.btn-login {
-    background-color: #f2994a !important;
-    border-color: #f2994a !important;
-    &:hover {
-        background-color: darken(#f2994a, 10%) !important;
-        border-color: darken(#f2994a, 10%) !important;
-    }
-}
-
-.btn-signup {
-    background-color: #092c4c !important;
-    border-color: #092c4c !important;
-    &:hover {
-        background-color: darken(#092c4c, 10%) !important;
-        border-color: darken(#092c4c, 10%) !important;
-    }
-}

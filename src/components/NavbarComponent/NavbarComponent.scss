@@ -1,70 +1,83 @@
 @import '../../../index.scss';
 
-.custom-navbar {
-    background-color: #000000;
-    padding: 1rem 2rem;
-    font-family: 'Open Sans', sans-serif;
+.navbar-dark {
+    background-color: transparent;
+    padding: 1rem 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
 
-    .navbar-logo {
-        .logo-img {
+    &.hidden {
+        display: none;
+    }
+
+    .navbar-brand {
+        .logo {
             height: 40px;
-            width: auto;
         }
+    }
+
+    .navbar-toggler {
+        border-color: rgba(255, 255, 255, 0.1);
     }
 
     .nav-link {
         color: #FFFFFF !important;
-        font-weight: 500;
-        padding: 0.5rem 1rem;
-        transition: color 0.3s ease;
-        
+        padding: 0.5rem 1rem !important;
+        opacity: 0.8;
+        transition: opacity 0.3s ease;
+
         &:hover {
-            color: #E47E43 !important;
+            opacity: 1;
         }
     }
 
-    .auth-buttons {
-        .btn {
+    .nav-buttons {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+
+        .login-btn, .signup-btn {
             padding: 0.5rem 1.5rem;
-            font-weight: 500;
             border-radius: 4px;
+            text-decoration: none;
             transition: all 0.3s ease;
         }
 
-        .btn-login {
+        .login-btn {
             background-color: #E47E43;
-            border: none;
             color: #FFFFFF;
-            margin-right: 1rem;
+            border: 1px solid #E47E43;
             
             &:hover {
-                background-color: darken(#E47E43, 10%);
+                background-color: darken(#E47E43, 5%);
             }
         }
 
-        .btn-signup {
-            background-color: #1274B1;
-            border: none;
+        .signup-btn {
+            background-color: #0D99FF;
             color: #FFFFFF;
+            border: 1px solid #0D99FF;
             
             &:hover {
-                background-color: darken(#1274B1, 10%);
+                background-color: darken(#0D99FF, 5%);
             }
         }
     }
 }
 
-// Responsive adjustments
 @media (max-width: 991px) {
-    .custom-navbar {
-        .auth-buttons {
+    .navbar-dark {
+        background-color: rgba(0, 0, 0, 0.9);
+        
+        .nav-buttons {
             margin-top: 1rem;
-            display: flex;
-            gap: 1rem;
-            
-            .btn {
-                flex: 1;
-                margin-right: 0;
+            flex-direction: column;
+            width: 100%;
+
+            .login-btn, .signup-btn {
+                width: 100%;
+                text-align: center;
             }
         }
     }

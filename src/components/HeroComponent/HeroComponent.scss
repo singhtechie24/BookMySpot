@@ -1,12 +1,14 @@
 .hero-section {
-  background-color: #000000;
   min-height: 100vh;
   position: relative;
-  
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
   .container {
-    display: flex;
-    flex-direction: column;
-    padding-top: 80px; // Space for navbar
+    position: relative;
+    z-index: 2;
   }
 
   .hero-content {
@@ -14,8 +16,7 @@
     color: #FFFFFF;
     margin: 0 auto;
     max-width: 800px;
-    padding: 60px 0;
-    z-index: 2;
+    padding: 40px 20px;
 
     h1 {
       margin-bottom: 2rem;
@@ -23,8 +24,8 @@
       .title-top {
         display: block;
         font-size: 3.5rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
+        font-weight: 400;
+        margin-bottom: 0.5rem;
       }
       
       .title-bottom {
@@ -41,6 +42,7 @@
         font-size: 1.25rem;
         margin-bottom: 0.5rem;
         opacity: 0.9;
+        font-weight: 300;
       }
     }
 
@@ -48,29 +50,42 @@
       display: flex;
       gap: 1.5rem;
       justify-content: center;
+      margin-bottom: 2rem;
       
-      .btn {
+      button, .find-spot {
         padding: 0.75rem 2rem;
         font-size: 1.1rem;
         font-weight: 500;
         border-radius: 4px;
+        border: none;
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        text-decoration: none;
+
+        span {
+          font-size: 1.2rem;
+        }
+
+        &:hover {
+          transform: translateY(-2px);
+        }
       }
 
       .list-spot {
-        background-color: #1274B1;
-        border: none;
+        background-color: #0D99FF;
+        color: #FFFFFF;
         
         &:hover {
-          background-color: darken(#1274B1, 5%);
+          background-color: darken(#0D99FF, 5%);
         }
       }
 
       .find-spot {
         background-color: #E47E43;
-        border: none;
+        color: #FFFFFF;
         
         &:hover {
           background-color: darken(#E47E43, 5%);
@@ -79,22 +94,49 @@
     }
   }
 
-  .hero-image {
-    margin-top: 2rem;
-    height: 580px;
-    width: 100%;
+  .car-showcase {
     position: relative;
-    overflow: hidden;
+    width: 100%;
+    height: 60vh;
+    margin-top: -50px;
     
-    img {
+    .car-background {
       position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      max-width: 1000px;
-      width: 100%;
-      height: auto;
-      object-fit: contain;
+      top: 0;
+      left: 10%;
+      width: 80%;
+      height: 100%;
+      background-image: url('../../assets/heroCar.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .car-foreground {
+      position: absolute;
+      top: 0;
+      left: -25%;
+      width: 150%;
+      height: 100%;
+    //   background-image: url('../../assets/carOnly.jpg');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+          circle at center,
+          transparent 50%,
+          rgba(0,0,0,0.8) 150%
+        );
+        pointer-events: none;
+      }
     }
   }
 }
@@ -113,14 +155,27 @@
         }
       }
 
+      .hero-description {
+        p {
+          font-size: 1.1rem;
+        }
+      }
+
       .hero-buttons {
         flex-direction: column;
         gap: 1rem;
+        margin-bottom: 1.5rem;
+        
+        button {
+          width: 100%;
+          justify-content: center;
+        }
       }
     }
-
-    .hero-image {
-      height: 400px;
+    
+    .car-showcase {
+      height: 45vh;
+      margin-top: -30px;
     }
   }
 } 

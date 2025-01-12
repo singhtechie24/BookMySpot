@@ -1,8 +1,14 @@
 import './HeroComponent.scss';
-import { Container, Button } from 'react-bootstrap';
-import heroCar from '../../assets/heroCar.jpg';
+import { Container } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const HeroComponent = () => {
+  const navigate = useNavigate();
+
+  const handleFindSpot = () => {
+    navigate('/parking-spot');
+  };
+
   return (
     <div className="hero-section">
       <Container>
@@ -18,18 +24,18 @@ const HeroComponent = () => {
           </div>
 
           <div className="hero-buttons">
-            <Button className="list-spot">
+            <button className="list-spot">
               List Spot <span>→</span>
-            </Button>
-            <Button className="find-spot">
+            </button>
+            <button className="find-spot" onClick={handleFindSpot}>
               Find Spot <span>→</span>
-            </Button>
+            </button>
           </div>
         </div>
       </Container>
-      
-      <div className="hero-image">
-        <img src={heroCar} alt="Luxury car with blue and orange effects" />
+      <div className="car-showcase">
+        <div className="car-background"></div>
+        <div className="car-foreground"></div>
       </div>
     </div>
   );
