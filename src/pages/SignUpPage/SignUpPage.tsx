@@ -1,4 +1,4 @@
-import './SignUpComponent.scss';
+import './SignUpPage.scss';
 import { Container } from 'react-bootstrap';
 import { useState } from 'react';
 import { FaFacebook, FaApple } from 'react-icons/fa';

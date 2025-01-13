@@ -42,6 +42,24 @@
             border-radius: 4px;
             text-decoration: none;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(255, 255, 255, 0.1);
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            &:hover::before {
+                transform: translateX(0);
+            }
         }
 
         .login-btn {
@@ -50,7 +68,7 @@
             border: 1px solid #E47E43;
             
             &:hover {
-                background-color: darken(#E47E43, 5%);
+                background-color: color-mix(in srgb, #E47E43, black 5%);
             }
         }
 
@@ -60,7 +78,7 @@
             border: 1px solid #0D99FF;
             
             &:hover {
-                background-color: darken(#0D99FF, 5%);
+                background-color: color-mix(in srgb, #0D99FF, black 5%);
             }
         }
     }

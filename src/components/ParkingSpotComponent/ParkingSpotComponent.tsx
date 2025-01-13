@@ -2,7 +2,7 @@ import './ParkingSpotComponent.scss';
 import { Container } from 'react-bootstrap';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaEllipsisH, FaSearch, FaHome, FaUser, FaCalendar, FaParking, FaBell, FaBars } from 'react-icons/fa';
+import { FaEllipsisH, FaSearch, FaHome, FaCalendar, FaParking, FaBell, FaBars } from 'react-icons/fa';
 import logo from '../../assets/logo.png';
 
 const ParkingSpotComponent = () => {
@@ -37,10 +37,6 @@ const ParkingSpotComponent = () => {
             <FaHome />
             <span>Dashboard</span>
           </a>
-          <a href="#" className="nav-item">
-            <FaUser />
-            <span>Users</span>
-          </a>
           <a onClick={handleCalendarClick} className="nav-item" style={{ cursor: 'pointer' }}>
             <FaCalendar />
             <span>Calendar</span>
@@ -51,14 +47,12 @@ const ParkingSpotComponent = () => {
           </a>
         </nav>
         <div className="notifications">
-          <FaBell />
-          <span className="badge">12</span>
-        </div>
-        <div className="user-profile">
-          <img src="https://via.placeholder.com/40" alt="User" />
-          <div className="user-info">
-            <span className="name">Brooklyn Simmons</span>
-            <span className="email">brooklyn@simmons.com</span>
+          <div className="notification-content">
+            <div className="notification-left">
+              <FaBell />
+              <span>Notifications</span>
+            </div>
+            <span className="badge">12</span>
           </div>
         </div>
       </div>

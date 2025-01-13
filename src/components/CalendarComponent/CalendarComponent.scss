@@ -95,13 +95,8 @@
         transition: all 0.3s ease;
         cursor: pointer;
 
-        &:hover {
-          background: rgba(255, 255, 255, 0.1);
-          color: white;
-        }
-
-        &.active {
-          background: #E47E43;
+        &:hover, &.active {
+          background-color: #898989;
           color: white;
         }
 
@@ -119,21 +114,32 @@
 
     .notifications {
       position: relative;
-      padding: 1rem;
+      padding: 0.75rem 1rem;
       margin: 1rem 0;
       color: #868686;
       cursor: pointer;
       text-align: center;
 
+      .notification-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #868686;
+
+        .notification-left {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+        }
+      }
+
       .badge {
-        position: absolute;
-        top: 0.5rem;
-        right: 0.5rem;
-        background: #E47E43;
+        margin-left: 2rem;
+        background: #1274B1;
         color: white;
-        font-size: 0.8rem;
-        padding: 0.2rem 0.5rem;
-        border-radius: 10px;
+        padding: 0.25rem 0.5rem;
+        border-radius: 999px;
+        font-size: 0.75rem;
       }
     }
 
@@ -178,184 +184,204 @@
       margin-left: -200px;
     }
 
-    .search-bar {
+    .header-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       margin-bottom: 2rem;
-      position: relative;
-      
-      .search-icon {
-        position: absolute;
-        left: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
-        color: #868686;
-        font-size: 1.1rem;
-      }
-      
-      input {
-        width: 100%;
-        padding: 0.75rem 1rem 0.75rem 2.5rem;
-        border-radius: 8px;
-        border: none;
-        background-color: #141414;
-        color: white;
-        font-size: 1rem;
 
-        &::placeholder {
-          color: #868686;
+      h1 {
+        font-size: 1.8rem;
+        color: white;
+      }
+
+      .search-bar {
+        position: relative;
+        width: 300px;
+
+        input {
+          width: 100%;
+          padding: 0.75rem 2.5rem;
+          background: #141414;
+          border: none;
+          border-radius: 8px;
+          color: white;
+
+          &::placeholder {
+            color: #868686;
+          }
         }
 
-        &:focus {
-          outline: none;
-          background-color: #1a1a1a;
+        .search-icon {
+          position: absolute;
+          left: 1rem;
+          top: 50%;
+          transform: translateY(-50%);
+          color: #868686;
         }
       }
     }
 
-    .calendar-container {
-      background: #141414;
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2rem;
+    .content-wrapper {
+      display: flex;
+      gap: 2rem;
+      height: calc(100vh - 180px);
 
-      .calendar-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 2rem;
+      .calendar-section {
+        flex: 1;
+        min-width: 0;
 
-        h2 {
-          font-size: 1.5rem;
-          font-weight: 600;
-        }
+        .calendar-container {
+          background: #2C2C2C;
+          border-radius: 12px;
+          padding: 1.5rem;
+          max-width: 800px;
+          margin-left: 3rem;
 
-        .navigation-buttons {
-          display: flex;
-          gap: 0.5rem;
-
-          .nav-btn {
-            background: none;
-            border: none;
-            color: #868686;
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
+          .calendar-header {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
 
-            &:hover {
-              background: rgba(255, 255, 255, 0.1);
+            h2 {
+              font-size: 1.2rem;
               color: white;
+            }
+
+            .navigation-buttons {
+              display: flex;
+              gap: 0.5rem;
+
+              .nav-btn {
+                background: transparent;
+                border: none;
+                color: #868686;
+                padding: 0.5rem;
+                cursor: pointer;
+                transition: color 0.3s;
+
+                &:hover {
+                  color: white;
+                }
+              }
+            }
+          }
+
+          .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            background-color: #2C2C2C;
+
+            .day-header {
+              text-align: center;
+              color: #868686;
+              padding: 0.5rem;
+              font-size: 0.9rem;
+            }
+
+            .date-cell {
+              aspect-ratio: 1;
+              height: 35px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 6px;
+              cursor: pointer;
+              font-size: 0.9rem;
+              color: white;
+
+              &:hover:not(.disabled) {
+                background: rgba(255, 255, 255, 0.1);
+              }
+
+              &.selected {
+                background: #1274B1;
+              }
+
+              &.today {
+                border: 1px solid #1274B1;
+              }
+
+              &.disabled {
+                color: #868686;
+                cursor: not-allowed;
+              }
             }
           }
         }
       }
 
-      .calendar-grid {
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-        gap: 0.5rem;
+      .booking-section {
+        width: 300px;
+        min-width: 300px;
 
-        .day-header {
-          text-align: center;
-          color: #868686;
-          font-weight: 500;
-          padding: 0.5rem;
-        }
+        .booking-form {
+          background: #141414;
+          border-radius: 12px;
+          padding: 1.5rem;
 
-        .date-cell {
-          aspect-ratio: 1;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: 8px;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          font-weight: 500;
+          .form-group {
+            margin-bottom: 1.25rem;
 
-          &:hover:not(.disabled) {
-            background: rgba(255, 255, 255, 0.1);
-          }
-
-          &.selected {
-            background: #1274B1;
-            color: white;
-          }
-
-          &.disabled {
-            color: #868686;
-            cursor: not-allowed;
-            opacity: 0.5;
-          }
-        }
-      }
-    }
-
-    .booking-form {
-      background: #141414;
-      border-radius: 12px;
-      padding: 2rem;
-
-      .form-group {
-        margin-bottom: 1.5rem;
-
-        label {
-          display: block;
-          margin-bottom: 0.5rem;
-          color: #868686;
-          font-weight: 500;
-        }
-
-        .input-with-icon {
-          position: relative;
-
-          input, select {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border-radius: 8px;
-            border: 1px solid #2a2a2a;
-            background-color: transparent;
-            color: white;
-            font-size: 1rem;
-            appearance: none;
-            cursor: pointer;
-
-            &::placeholder {
+            label {
+              display: block;
+              margin-bottom: 0.5rem;
               color: #868686;
             }
 
-            &:focus {
-              outline: none;
-              border-color: #1274B1;
+            .input-with-icon {
+              position: relative;
+
+              input, select {
+                width: 100%;
+                padding: 0.75rem 1rem;
+                background: transparent;
+                border: 1px solid #2a2a2a;
+                border-radius: 8px;
+                color: rgb(134, 129, 129);
+                appearance: none;
+
+                &:focus {
+                  outline: none;
+                  border-color: #1274B1;
+                }
+              }
+
+              .icon {
+                position: absolute;
+                right: 1rem;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #868686;
+                pointer-events: none;
+              }
             }
           }
 
-          .icon {
-            position: absolute;
-            right: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #868686;
-            pointer-events: none;
+          .view-slots-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background: #1274B1;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s;
+
+            &:hover {
+              background: darken(#1274B1, 5%);
+            }
+
+            &:disabled {
+              background: #868686;
+              cursor: not-allowed;
+            }
           }
-        }
-      }
-
-      .view-slots-btn {
-        width: 100%;
-        padding: 0.75rem;
-        background: #1274B1;
-        border: none;
-        border-radius: 8px;
-        color: white;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.3s ease;
-
-        &:hover {
-          background: darken(#1274B1, 5%);
         }
       }
     }

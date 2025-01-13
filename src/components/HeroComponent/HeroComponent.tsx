@@ -9,6 +9,10 @@ const HeroComponent = () => {
     navigate('/parking-spot');
   };
 
+  const handleListSpot = () => {
+    navigate('/signup');
+  };
+
   return (
     <div className="hero-section">
       <Container>
@@ -24,7 +28,7 @@ const HeroComponent = () => {
           </div>
 
           <div className="hero-buttons">
-            <button className="list-spot">
+            <button className="list-spot" onClick={handleListSpot}>
               List Spot <span>→</span>
             </button>
             <button className="find-spot" onClick={handleFindSpot}>

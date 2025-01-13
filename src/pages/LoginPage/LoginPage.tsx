@@ -1,4 +1,4 @@
-import './LoginComponent.scss';
+import './LoginPage.scss';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaFacebook, FaApple } from 'react-icons/fa';

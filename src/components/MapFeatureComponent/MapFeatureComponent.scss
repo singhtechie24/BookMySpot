@@ -1,11 +1,12 @@
 .map-feature-section {
-  padding: 6rem 0;
+  padding: 2rem 0;
   background-color: #ffffff;
 
   .feature-content {
     display: flex;
     align-items: center;
-    gap: 4rem;
+    gap: 2rem;
+    margin-top: -50px;
 
     .feature-image {
       flex: 1;
@@ -13,7 +14,7 @@
         width: 100%;
         height: auto;
         border-radius: 8px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        // box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       }
     }
 
@@ -46,7 +47,7 @@
         transition: all 0.3s ease;
 
         &:hover {
-          background-color: darken(#E47E43, 5%);
+          background-color: color-mix(in srgb, #E47E43, black 5%);
           transform: translateY(-2px);
         }
       }

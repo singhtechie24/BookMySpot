@@ -1,9 +1,19 @@
 import './NavbarComponent.scss';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 
 const NavbarComponent = () => {
+  const location = useLocation();
+  
+  // Define routes where navbar should be hidden
+  const hideNavbarRoutes = ['/login', '/signup', '/parking-spot'];
+  
+  // Check if current route is in the hideNavbarRoutes array
+  if (hideNavbarRoutes.includes(location.pathname)) {
+    return null;
+  }
+
   return (
     <Navbar expand="lg" className="navbar-dark">
       <Container>

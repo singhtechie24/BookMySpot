@@ -13,7 +13,7 @@
       .save {
         display: inline-block;
         font-size: 1rem;
-        color: #E47E43;
+        color: #020202;
         margin-bottom: 1rem;
       }
 
@@ -30,11 +30,12 @@
         color: #666;
         margin-bottom: 2.5rem;
         max-width: 500px;
+        font-weight: 500;
       }
 
       .promo-features {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         gap: 1.5rem;
         margin-bottom: 2.5rem;
 
@@ -77,11 +78,12 @@
           border-radius: 4px;
           cursor: pointer;
           transition: all 0.3s ease;
+          margin-left: 1.5rem;
 
           &.claim {
-            background-color: #E47E43;
-            color: #fff;
-            border: none;
+            background-color: #ffffff;
+            color: #000000;
+            border: 1px solid #020202;
 
             &:hover {
               background-color: darken(#E47E43, 5%);
@@ -115,7 +117,7 @@
       img {
         width: 100%;
         height: auto;
-        border-radius: 8px;
+        // border-radius: 8px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       }
     }
