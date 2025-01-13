@@ -2,11 +2,14 @@
   background-color: #000000;
   min-height: 100vh;
   position: relative;
+  background-image: url('../../assets/header.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   
   .container {
     display: flex;
     flex-direction: column;
-    padding-top: 80px; // Space for navbar
+    //padding-top: 80px; // Space for navbar
   }
 
   .hero-content {
@@ -18,13 +21,12 @@
     z-index: 2;
 
     h1 {
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       
       .title-top {
         display: block;
         font-size: 3.5rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
+        font-weight: 400;
       }
       
       .title-bottom {
@@ -35,18 +37,18 @@
     }
 
     .hero-description {
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
       
       p {
-        font-size: 1.25rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.75rem;
+        margin-bottom: 0.1rem;
         opacity: 0.9;
       }
     }
 
     .hero-buttons {
       display: flex;
-      gap: 1.5rem;
+      //gap: -.5rem;
       justify-content: center;
       
       .btn {
@@ -62,39 +64,12 @@
       .list-spot {
         background-color: #1274B1;
         border: none;
-        
-        &:hover {
-          background-color: darken(#1274B1, 5%);
-        }
       }
 
       .find-spot {
         background-color: #E47E43;
         border: none;
-        
-        &:hover {
-          background-color: darken(#E47E43, 5%);
-        }
       }
-    }
-  }
-
-  .hero-image {
-    margin-top: 2rem;
-    height: 580px;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    
-    img {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      max-width: 1000px;
-      width: 100%;
-      height: auto;
-      object-fit: contain;
     }
   }
 }

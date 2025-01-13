@@ -1,9 +1,13 @@
+import { FaArrowCircleRight } from 'react-icons/fa';
 import './HeroComponent.scss';
 import { Container, Button } from 'react-bootstrap';
-import heroCar from '../../assets/heroCar.jpg';
+import ButtonComponent from '../ButtonComponent/ButtonComponent';
+import EffortlessParkingComponent from '../EffortlessParkingComponent/EffortlessParkingComponent';
+//import heroCar from '../../assets/heroCar.jpg';
 
 const HeroComponent = () => {
   return (
+    <>
     <div className="hero-section">
       <Container>
         <div className="hero-content">
@@ -18,20 +22,19 @@ const HeroComponent = () => {
           </div>
 
           <div className="hero-buttons">
-            <Button className="list-spot">
-              List Spot <span>→</span>
-            </Button>
-            <Button className="find-spot">
-              Find Spot <span>→</span>
-            </Button>
+            <ButtonComponent className='me-3' children={'List Spot'} variant={'orange'} icon = {<FaArrowCircleRight />} iconPosition='right'/>
+            <ButtonComponent children={'Find Spot'} variant={'blue'} icon = {<FaArrowCircleRight />} iconPosition='right'/>
           </div>
         </div>
       </Container>
       
-      <div className="hero-image">
+      {/* <div className="hero-image">
         <img src={heroCar} alt="Luxury car with blue and orange effects" />
-      </div>
+      </div> */}
+      
     </div>
+    <EffortlessParkingComponent />
+    </>
   );
 };
 

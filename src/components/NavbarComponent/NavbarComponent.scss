@@ -36,20 +36,12 @@
             border: none;
             color: #FFFFFF;
             margin-right: 1rem;
-            
-            &:hover {
-                background-color: darken(#E47E43, 10%);
-            }
         }
 
         .btn-signup {
             background-color: #1274B1;
             border: none;
             color: #FFFFFF;
-            
-            &:hover {
-                background-color: darken(#1274B1, 10%);
-            }
         }
     }
 }

@@ -2,6 +2,8 @@ import './NavbarComponent.scss';
 import { Container, Navbar, Nav, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png';
+import ButtonComponent from '../ButtonComponent/ButtonComponent';
+import { FaArrowCircleRight } from 'react-icons/fa';
 
 const NavbarComponent = () => {
   return (
@@ -27,8 +29,10 @@ const NavbarComponent = () => {
           
           {/* Auth Buttons */}
           <Nav className="auth-buttons">
-            <Button variant="login" className="me-2">Login</Button>
-            <Button variant="signup">Sign up</Button>
+            {/* <Button variant="login" className="me-2">Login</Button>
+            <Button variant="signup">Sign up</Button> */}
+            <ButtonComponent className='me-3' children={'Login'} variant={'orange'} icon = {<FaArrowCircleRight />} iconPosition='right'/>
+            <ButtonComponent children={'Sign up'} variant={'blue'} icon = {<FaArrowCircleRight />} iconPosition='right'/>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -1,0 +1,51 @@
+body {
+  overflow-x: none;
+}
+
+.custom-navbar {
+  background-color: #000000;
+  padding: 1rem 2rem;
+  font-family: "Open Sans", sans-serif;
+}
+.custom-navbar .navbar-logo .logo-img {
+  height: 40px;
+  width: auto;
+}
+.custom-navbar .nav-link {
+  color: #FFFFFF !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+.custom-navbar .nav-link:hover {
+  color: #E47E43 !important;
+}
+.custom-navbar .auth-buttons .btn {
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+.custom-navbar .auth-buttons .btn-login {
+  background-color: #E47E43;
+  border: none;
+  color: #FFFFFF;
+  margin-right: 1rem;
+}
+.custom-navbar .auth-buttons .btn-signup {
+  background-color: #1274B1;
+  border: none;
+  color: #FFFFFF;
+}
+
+@media (max-width: 991px) {
+  .custom-navbar .auth-buttons {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+  }
+  .custom-navbar .auth-buttons .btn {
+    flex: 1;
+    margin-right: 0;
+  }
+}/*# sourceMappingURL=NavbarComponent.css.map */
